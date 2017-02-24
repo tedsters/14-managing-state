@@ -34,7 +34,7 @@
     });
   };
 
-  // TODO: Combine both filter functions to a single event handler,
+  // XXX: Combine both filter functions to a single event handler,
   // which simply redirects to a url like: /category/skateboarding or /author/Kevin+Bacon
   // Where is it invoked? What values are passed in? Where does it interact elsewhere in the code?
   // Put your response in this comment...
@@ -67,7 +67,7 @@
     articleView.populateFilters();
     articleView.handleFilters();
 
-    // TODO: Replace setTeasers with just the truncation logic, if needed. Where is it invoked? What values are passed in? Where does it interact elsewhere in the code?
+    // XXX: Replace setTeasers with just the truncation logic, if needed. Where is it invoked? What values are passed in? Where does it interact elsewhere in the code?
     // Put your response in this comment...
     if ($('#articles article').length > 1) {
       $('.article-body *:nth-of-type(n+2)').hide();
