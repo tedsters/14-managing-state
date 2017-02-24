@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 const requestProxy = require('express-request-proxy');
 const app = express();
 const PORT = process.env.PORT || 3000;
-const conString = 'postgres://localhost:5432'; // DONE: Don't forget to set your own conString
-// const conString = ''; // TODO: Don't forget to set your own conString
+//const conString = 'postgres://localhost:5432'; // DONE: Don't forget to set your own conString
+const conString = 'postgres://postgres:1234@localhost:5432/postgres'; // DONE: Don't forget to set your own conString
 const client = new pg.Client(conString);
 client.connect(console.error);
 
@@ -198,8 +198,8 @@ app.delete('/articles/:id', (request, response) => {
   response.send('Delete complete');
 });
 
-// TODO: Where is this invoked? What does it do?
-// Put your response in this comment...
+// DONE: Where is this invoked? What does it do?
+// It is invoked by the Article.truncateTable method in article.js when all articles will be deleted. It sends a SQL query to the DB to delete all records in articles table.
 app.delete('/articles', (request, response) => {
   client.query(
     'DELETE FROM articles;'
